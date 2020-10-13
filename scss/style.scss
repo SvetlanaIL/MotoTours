@@ -1,0 +1,593 @@
+/*<МИКСИНЫ>======================================================================================================================================================================================================*/
+@import "mixins.scss";
+
+/*<Подключаем шрифты>==============================================================================================================================================================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500;700&display=swap&family=Caveat:wght@700&display=swap');
+
+/*<Шрифт по умолчанию>=================================================================================================================================================================================================*/
+$fontfamily:"Roboto";
+
+/*<ПЕРЕМЕННЫЕ>==================================================================================================================================================================================================================*/
+$minwidth: 320px;
+$fontfam1: 'Montserrat', sans-serif;
+$fontfam2: 'Roboto', sans-serif;
+$fontfam3: 'Caveat', cursive;
+$color_1: #fff;
+
+/*<MEDIA>==================================================================================================================================================================================================================*/
+@media (max-width:1200px){
+	.container{
+		max-width: 970px;
+	}
+}
+@media (max-width:992px){
+	.container{
+		max-width: 750px;
+	}
+}
+@media (max-width:767px){
+	.container{
+		max-width: none;
+	}
+}
+
+/*<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>======================================================================================================================================================================================================*/
+@import "nullstyle.scss";
+
+/*<ОБОЛОЧКА>==================================================================================================================================================================================================================*/
+.wrapper{
+	overflow: hidden;
+	min-height: 100%;
+}
+
+/*<ОСНОВНАЯ СЕТКА>==================================================================================================================================================================================================================*/
+.container, .container__signup, .container__login {
+	max-width: 1230px;
+	padding: 0px 15px;
+	margin: 0px auto;
+}
+
+/*<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================*/
+@import "ui.scss";
+@import "header.scss";
+@import "footer.scss";
+@import "tours.scss";
+
+body {
+background-color: #ededed;
+}
+
+/*<ОСНОВНОЙ БЛОК>===========================================================================================================================================================================================================*/
+.page, .page__signup, .page__login, .page__tours {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	@include flexbox();
+	flex-direction: column;
+}
+.main-screen, .main-screen__2, .main-screen__3, .main-screen__4, .main-screen__signup, .main-screen__login, .main-screen__tours {
+	flex: 1 0 100%;
+	position: relative;
+	/* .main-screen__bg*/
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+
+.projects {
+	margin: 0 0 300px 0;
+}
+
+.title-text {
+	text-align: center;
+	@include h1();
+	margin: 70px 0;
+}
+
+.three-block__title {
+	@include h1();
+	margin: 40px 0 20px 0;
+}
+
+.three-block__row {
+	@include flexbox();
+}
+
+.three-block__column {
+	flex: 0 1 100%;
+}
+
+.three-block__title-text {
+	@include fontsize(26px);
+	color: #000;
+	font-family: $fontfam1;
+	text-align: center;
+}
+
+.three-block__text {
+	h3 {
+		margin: 10px 0;
+		text-align: center;
+	}
+	li {
+		@include fontsize(22px);
+		color: #000;
+		line-height: 1.5;
+	}
+}
+
+.three-block__text h3 {
+	@include fontsize(26px);
+	color: #000;
+	font-weight: 900;
+	text-align: center;
+	// margin: 32px 0 16px 0;
+}
+
+.three-block__button {
+	margin: 35px 0 152px 0;
+	width: 202px;
+	height: 68px;
+	background-color: #cd0a2d;
+	border-radius: 50px;
+	color: $color_1;
+	@include fontsize(21px);
+	font-family: $fontfam2;
+	@include flexbox(); 
+	align-items: center;
+	justify-content: center;
+	a {
+		color: #fff;
+	}
+}
+
+
+.three-block__link {
+	@include fontsize(25px);
+	font-family: $fontfam2;
+	text-align: center;
+	margin: 50px 0 0 0;
+	font-weight: 900;
+	a {
+		color: #000;
+		text-decoration: underline;
+	}
+
+}
+
+
+.main-screen__2 {
+	margin: -150px 0 0 0;
+}
+
+.trainers {
+	margin: 50px 0 0 0;
+}
+
+.trainers-block__row {
+	@include flexbox();
+}
+
+.trainers-block__column {
+	flex: 0 1 50%;
+	@include flexbox();
+	justify-content: center;
+}
+
+.trainers-block__item-1, .trainers-block__item-2 {
+	width: 550px;
+	color: #000;
+	@include fontsize(26px);
+	font-family: $fontfam2;
+		h1 {
+			text-align: center;
+			font-weight: 900;
+			padding: 0 0 25px 0;
+		}
+}
+
+.trainers-block__item-2 {
+	width: 550px;
+}
+
+.block1__inner-text {
+	@include fontsize(22px);
+	h3 {
+		font-weight: 900;
+		padding: 15px 0 15px 0;
+	}
+}
+
+.block2__inner-text-1, .block2__inner-text-3 {
+	@include fontsize(22px);
+	@include flexbox();
+	flex-direction: row;
+	align-items: center;
+	margin: 0 0 25px 0;
+	color: #000;
+		.inner__text {
+		width: 100%;
+		@include fontsize(18px);
+		padding: 0 0 0 15px;
+	}
+}
+
+.block2__inner-text-2 {
+	@include fontsize(22px);
+	@include flexbox();
+	flex-direction: row-reverse;
+	align-items: center;
+	margin: 0 0 25px 0;
+	color: #000;
+		.inner__text {
+		width: 100%;
+		@include fontsize(18px);
+		padding: 0 15px 0 0;
+	}
+}
+
+.main-screen__3 {
+	margin: 100px 0 0 0;
+}
+
+.reviews {
+	margin: 100px 0 0 0;
+}
+
+.reviews-block__title {
+	@include h1();
+}
+
+.reviews-block__row {
+	@include flexbox();
+	justify-content: space-between;
+}
+
+.reviews-block__column {
+	flex: 0 1 50%;
+	@include flexbox();
+	justify-content: center;
+}
+
+.reviews-block__column-img {
+	padding: 80px 0 0 0;
+	position: relative;
+}
+
+.reviews-block__item-2 {
+	width: 550px;
+}
+
+.single-slide {
+	width: 600px;
+	height: 524px;
+	background-color: rgba(255,255,255, 0.5);
+	@include flexbox();
+	justify-content: center;
+}
+
+.slider__inner {
+	width: 400px;
+	@include flexbox();
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.slider__img {
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+	margin: 50px 0 0 0;
+		span {
+			padding: 0 0 0 10px;
+		}
+}
+
+.slider__text {
+	width: 350px;
+	@include fontsize(18px);
+	line-height: 1.5;
+	@include flexbox();
+	flex-direction: row;
+	align-items: center;
+	text-align: center;
+	margin: 30px auto;
+}
+
+.reviews-block__inner {
+	position: absolute;
+	z-index: 1;
+	height: 350px;
+	margin-left: 36px;
+	margin-top: -400px;
+	width: 500px;
+	background-color: #ededed;
+
+}
+
+.reviews-block1__title {
+	text-align: center;
+	padding: 20px 0 0 140px;
+	@include flexbox();
+	align-items: center;
+	img {
+		
+
+	}
+	span {
+		color: #000;
+		@include fontsize(26px);
+		font-family: $fontfam2;
+		padding: 0 0 0 15px;
+	}
+}
+
+.main-screen__bg-4 {
+	img {
+		height: 232px;
+	}
+	
+}
+
+/*Адрес*/
+.address__inner {
+	height: 130px;
+	background-color: #cd0a2d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.address__text {
+	@include fontsize(33px);
+	color: $color_1;
+	font-family: $fontfam1;
+	font-style: normal;
+}
+
+.three-block__address-icon {
+	font-size: 40px;
+}
+
+.address-column {
+	@include flexbox();
+	justify-content: center;
+}
+
+.address-item {
+	.three-block__address-icon {
+		text-align: center;
+		margin: 50px 0 10px 0;
+	}
+	.three-block__address-text {
+		@include fontsize(25px);
+		font-family: $fontfam1;
+		font-style: normal;
+	}
+}
+
+.social-networks {
+	@include flexbox();
+	flex-direction: row;
+	justify-content: center;
+
+	div {
+		@include fontsize(35px);
+	}
+	.fab {
+		color: #000;
+		padding: 100px 20px 20px 0;
+	}
+}
+
+/*Форма регистрации и авторизации*/
+.home-link {
+	margin: 10px 0 0 0;
+	a {
+		color: #000;
+	}
+}
+
+.signup__row, .login__row {
+	width: 600px;
+	border-radius: 20px;
+	margin: 0 auto;
+	padding: 10px 0 100px 0;
+}
+
+.signup__title {
+	@include fontsize(26px);
+	font-weight: 900;
+	font-family: $fontfam1;
+	text-align: center;
+	margin: 50px 0 0 0;
+}
+
+.signup__form {
+	@include flexbox();
+	flex-direction: column;
+	align-items: center;
+	padding: 40px 0 0 0;
+		label {
+			@include fontsize(20px);
+			color: #000;
+			font-weight: 900;
+			font-family: $fontfam1;
+			text-align: center;
+		}
+		input {
+			width: 300px;
+			height: 40px;
+			border-radius: 10px;
+			margin: 15px 0 15px 0;
+		}
+		.signup__submit {
+			width: 300px;
+			height: 50px;
+			margin: 10px 0 0 0;
+			position: relative;
+			  display: inline-block;
+			  background-color: #903;
+			  color: $color_1;
+			  font-weight: bold;
+			  text-decoration: none;
+			  text-shadow: rgba(255,255,255,.5) 1px 1px, rgba(100,100,100,.3) 3px 7px 3px;
+			  -webkit-user-select: none;
+			     -moz-user-select: none;
+			      -ms-user-select: none;
+			          user-select: none;
+			  padding: 1em 2em;
+			  outline: none;
+			  border-radius: 20px;
+			  background-image:
+			   linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%),
+			   linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 90%, rgba(255,255,255,.3)),
+			   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+			   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+			   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5)),
+			   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5));
+			  background-repeat: no-repeat;
+			  background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px;
+			  background-position: 200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+			  box-shadow: rgba(0,0,0,.5) 3px 10px 10px -10px;
+		}
+		.signup__submit:hover {
+			transition: .5s linear;
+			background-position: -200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+		}
+		.signup__submit:active {
+			top: 1px;
+		}
+}
+
+.password__text {
+	@include fontsize(10px);
+}
+
+.signup__success {
+	text-align: center;
+	@include fontsize(16px);
+	color: green;
+	font-weight: 900;
+	font-family: $fontfam1;
+	width: 600px;
+	margin: 0 auto;
+	padding: 30px 0 0 0;
+}
+
+.signup__final-text {
+	@include fontsize(10px);
+	padding: 10px 0 0 0;
+}
+
+.signup__errors {
+	text-align: center;
+	@include fontsize(18px);
+	color: red;
+	font-weight: 900;
+	font-family: $fontfam1;
+	width: 600px;
+	margin: 30px auto;
+
+}
+
+
+/*Авторизация*/
+.login__form {
+	@include flexbox();
+	flex-direction: column;
+	align-items: center;
+	padding: 60px 0 0 0;
+		.login__login, .login__password {
+			@include fontsize(26px);
+			color: #000;
+			font-weight: 900;
+			font-family: $fontfam1;
+			text-align: center;
+		}
+		.login__login-input, .login__password-input {
+			width: 300px;
+			height: 40px;
+			border-radius: 10px;
+			margin: 15px 0 15px 0;
+		}
+		.login__submit {
+			width: 300px;
+			height: 50px;
+			margin: 10px 0 0 0;
+			position: relative;
+			  display: inline-block;
+			  background-color: #903;
+			  color: $color_1;
+			  font-weight: bold;
+			  text-decoration: none;
+			  text-shadow: rgba(255,255,255,.5) 1px 1px, rgba(100,100,100,.3) 3px 7px 3px;
+			  -webkit-user-select: none;
+			     -moz-user-select: none;
+			      -ms-user-select: none;
+			          user-select: none;
+			  padding: 1em 2em;
+			  outline: none;
+			  border-radius: 20px;
+			  background-image:
+			   linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%),
+			   linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0) 20%, rgba(255,255,255,0) 90%, rgba(255,255,255,.3)),
+			   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+			   linear-gradient(to right, rgba(125,125,125,1), rgba(255,255,255,.9) 45%, rgba(125,125,125,.5)),
+			   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5)),
+			   linear-gradient(to right, rgba(223,190,170,1), rgba(255,255,255,.9) 45%, rgba(223,190,170,.5));
+			  background-repeat: no-repeat;
+			  background-size: 200% 100%, auto, 100% 2px, 100% 2px, 100% 1px, 100% 1px;
+			  background-position: 200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+			  box-shadow: rgba(0,0,0,.5) 3px 10px 10px -10px;
+		}
+		.login__submit:hover {
+			transition: .5s linear;
+			background-position: -200% 0, 0 0, 0 0, 0 100%, 0 4px, 0 calc(100% - 4px);
+		}
+		.login__submit:active {
+			top: 1px;
+		}
+}
+
+/*Личный кабинет*/
+
+.personal__row {
+	margin: 0 auto;
+	width: 500px;
+	height: 500px;
+	background-color: rgba(255,255,255, 0.5);
+	@include flexbox();
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.personal__title {
+	@include fontsize(26px);
+	font-weight: 900;
+	font-family: $fontfam1;
+	text-align: center;
+	margin: 50px 0;
+}
+
+.personal__title-info {
+	@include fontsize(20px);
+	font-weight: 900;
+	font-family: $fontfam1;
+	text-align: center;
+	margin: 20px 0;
+}
+
+.personal__inner {
+	width: 300px;
+	@include fontsize(20px);
+	font-family: $fontfam1;
+	line-height: 1.5;
+}

@@ -1,0 +1,13 @@
+@mixin anim($time,$delay){transition: all $time ease $delay;}
+@mixin anim_cubic($time, $delay) {transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;}
+@mixin animate($name,$time,$infinite,$type){-webkit-animation:$name $time+s $infinite $type;animation:$name $time+s $infinite $type;}
+@mixin rotate($deg){transform:rotate($deg);}
+@mixin scale($num){transform: scale($num);}
+@mixin skew($num){transform: skewX($num);}
+@mixin cnt($h){display: flex;flex-direction: column;height: $h;text-align: center;align-items: stretch;justify-content: center;}
+@mixin tr($x,$y,$z){transform: translate3d($x, $y, $z); -webkit-transform:translate3d($x, $y, $z);-ms-transform:translate3d($x, $y, $z);-o-transform:translate3d($x, $y, $z);-moz-transform:translate3d($x, $y, $z);};
+@mixin flexbox(){display:flex;}
+@mixin flexboxinline(){display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex;}
+@mixin flexorder($val){order: $val;}
+@mixin fontsize($f){font-size: $f;}
+@mixin h1(){font-size: 36px;margin: 0px 0px 50px 0px;font-family: $fontfam1;font-weight: 900;text-align: center;}

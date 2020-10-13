@@ -1,0 +1,12 @@
+.footer__background {
+	height: 90px;
+	background-color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer__text {
+	color: $color_1;
+	@include fontsize(18px);
+}

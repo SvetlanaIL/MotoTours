@@ -1,0 +1,294 @@
+/*<МИКСИНЫ>======================================================================================================================================================================================================*/
+@import "mixins.scss";
+
+/*<Подключаем шрифты>==============================================================================================================================================================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;500;700&display=swap&family=Caveat:wght@700&display=swap');
+
+/*<Шрифт по умолчанию>=================================================================================================================================================================================================*/
+$fontfamily:"Roboto";
+
+/*<ПЕРЕМЕННЫЕ>==================================================================================================================================================================================================================*/
+$minwidth: 320px;
+$fontfam1: 'Montserrat', sans-serif;
+$fontfam2: 'Roboto', sans-serif;
+$fontfam3: 'Caveat', cursive;
+$color_1: #fff;
+
+/*<MEDIA>==================================================================================================================================================================================================================*/
+@media (max-width:1200px){
+	.container{
+		max-width: 970px;
+	}
+}
+@media (max-width:992px){
+	.container{
+		max-width: 750px;
+	}
+}
+@media (max-width:767px){
+	.container{
+		max-width: none;
+	}
+}
+
+/*<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>======================================================================================================================================================================================================*/
+@import "nullstyle.scss";
+
+.basket {
+	width: 150px;
+	height: 70px;
+	background-color: #fff;
+	border-radius: 20px;
+	opacity: 0.5;
+	margin: 50px auto;
+	@include flexbox();
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+		a {
+			color: #000;
+		}
+		.fa-shopping-basket {
+			font-size: 25px;
+		}
+}
+
+.tours__home-link {
+		margin: 10px 0 0 0;
+	a {
+		color: #000;
+	}
+}
+
+
+/*Страница корзины*/
+.wrapper {
+	overflow: hidden;
+	min-height: 100%;
+}
+
+.container {
+	max-width: 1230px;
+	padding: 0px 15px;
+
+}
+
+.page__cart, .page__order {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	@include flexbox();
+	flex-direction: column;
+}
+
+.main-screen__cart, .main-screen__order {
+	flex: 1 0 100%;
+	position: relative;
+	/* .main-screen__bg*/
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+
+.fa-home {
+	margin: 0 10px 0 0;
+}
+
+.cart__main-link {
+	margin: 30px 0 0 0;
+	a {
+		color: #000;
+		@include fontsize(22px);
+		font-family: $fontfam1;
+	}
+
+}
+
+.cart__title {
+	@include h1();
+	margin: 100px 0 0 0;
+}
+
+.container__cart-inner {
+	@include flexbox();
+	justify-content: center;
+}
+
+.cart__row {
+	margin: 100px 0 0 0;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	width: 700px;
+	height: 200px;
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+	@include fontsize(22px);
+	font-family: $fontfam1;
+}
+
+.cart__inner {
+	li {
+		line-height: 2;
+	}
+}
+
+.fa-trash-alt {
+	color: #000;
+}
+
+.cart__buttons {
+	width: 700px;
+	@include flexbox(); 
+	justify-content: space-around;
+	margin: 0 auto;
+}
+
+.cart__buttons-continue, .cart__buttons-checkout {
+		margin: 35px 0 152px 0;
+		width: 202px;
+		height: 48px;
+		background-color: #cd0a2d;
+		border-radius: 50px;
+		color: $color_1;
+		@include fontsize(15px);
+		font-family: $fontfam2;
+		@include flexbox(); 
+		align-items: center;
+		justify-content: center;
+		a {
+			color: #fff;
+		}
+	}
+
+/*Страница заказа*/
+.order__title {
+	@include fontsize(23px);
+	font-family: $fontfam1;
+	font-weight: 900;
+	margin: 20px 0;
+	text-align: center;
+}
+
+.order__form {
+	@include flexbox();
+	flex-direction: row;
+	justify-content: center;
+}
+
+.order-left-section {
+	width: 500px;
+	background-color: rgba(255, 255, 255, 0.5);
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+}
+
+.left-section__inner {
+	width: 300px;
+	height: 500px;
+		h3 {
+			@include fontsize(23px);
+			font-family: $fontfam1;
+			margin: 0 0 20px 0;
+			font-weight: 900;
+		}
+		p {
+			@include fontsize(16px);
+			font-family: $fontfam1;
+			font-weight: 600;
+		}
+		input {
+			width: 300px;
+			height: 40px;
+			margin: 20px 0;
+			border: 3px solid rgba(95,95,95, 0.5);
+			border-radius: 10px;
+		}
+		.left-section__submit {
+			margin: 15px 0 152px 0;
+			width: 300px;
+			height: 48px;
+			background-color: #cd0a2d;
+			border-radius: 50px;
+			color: $color_1;
+			@include fontsize(15px);
+			font-family: $fontfam2;
+			@include flexbox(); 
+			align-items: center;
+			justify-content: center;
+			border: none;
+		}
+}
+
+.order-right-section {
+	width: 500px;
+	height: 600px;
+	background-color: rgba(255, 255, 255, 0.5);
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+}
+
+.right-section__inner {
+	width: 300px;
+	height: 500px;
+		h3 {
+			@include fontsize(23px);
+			font-family: $fontfam1;
+			margin: 0 0 20px 0;
+			font-weight: 900;
+			text-align: center;
+		}
+		li {
+			list-style: disc;
+			@include fontsize(16px);
+			font-family: $fontfam1;
+		}
+		.right-section__price {
+			@include fontsize(16px);
+			font-family: $fontfam1;
+			padding: 10px 0 0 0;
+		}
+		.right-section__total {
+			@include fontsize(16px);
+			font-family: $fontfam1;
+			padding: 10px 0 10px 0;
+		}
+		a {
+			margin: 10px 0 0 0;
+			width: 165px;
+			height: 38px;
+			background-color: #cd0a2d;
+			border-radius: 50px;
+			color: $color_1;
+			@include fontsize(12px);
+			font-family: $fontfam2;
+			@include flexbox(); 
+			align-items: center;
+			justify-content: center;
+		}
+		.fa-pencil-alt {
+			margin: 0 5px 0 0;
+		}
+}
+
+/*Страница успешно оформленного заказа*/
+.container__inner{
+	min-height: 100vh;
+	@include flexbox(); 
+	align-items: center;
+	justify-content: center;
+}
+
+.order__title {
+	height: 50px;
+}
+
