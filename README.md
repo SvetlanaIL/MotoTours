@@ -9,4 +9,7 @@
 ![Иллюстрация к проекту](https://github.com/SvetlanaIL/MotoTours/raw/main/screenshots/slider.png)
 # Страница товаров с возможностью добавления их в корзину
 ![Иллюстрация к проекту](https://github.com/SvetlanaIL/MotoTours/raw/main/screenshots/trip.png)
-Сайт на php с реализацией формы регистрации / авторизации (с использованием БД MySQL), личного кабинет, страницы товаров с возможностью добавления их в корзину, страницы оформления заказа с отправкой данных о заказе на почту.
+# Корзина 
+![Иллюстрация к проекту](https://github.com/SvetlanaIL/MotoTours/raw/main/screenshots/basket.png)
+# Страницы оформления заказа с отправкой данных о заказе на почту
+![Иллюстрация к проекту](https://github.com/SvetlanaIL/MotoTours/raw/main/screenshots/order.png)
